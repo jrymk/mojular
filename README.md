@@ -74,6 +74,21 @@ captive_portal:
       update_interval: 4s
 ```
 
+#### BME680 Temperature+Pressure+Humidity+Gas Sensor via BSEC
+[ESPHome](https://esphome.io/components/sensor/bme680_bsec.html)
+
+```yaml
+  bme680: !include
+    file: mojular/bme680.yaml
+    vars:
+      id: "bme680"
+      name: "BME680"
+      i2c_id: i2c0
+      address: 0x76
+```
+
+- [ ] todo: iaq accuracy
+
 #### SenseAir CO_2 Sensor
 [ESPHome](https://esphome.io/components/sensor/senseair.html)
 
@@ -97,4 +112,29 @@ captive_portal:
       id: "mmwave"
       name: "mmWave"
       uart_id: "mmwave_uart"
+```
+
+#### MICS-6814
+co-gnd 0.8M
+nh3-gnd 90k
+no2-gnd 6.4k
+
+```yaml
+  mics6814: !include
+    file: mojular/mics6814.yaml
+    vars:
+      id: "mics6814"
+      name: "MICS6814"
+      co_pin: GPIO7
+      nh3_pin: GPIO8
+      no2_pin: GPIO9
+      update_interval: 10s
+```
+
+#### Buzzer
+```yaml
+  buzzer: !include
+    file: mojular/buzzer.yaml
+    vars:
+      pin: GPIO21
 ```
