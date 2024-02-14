@@ -57,6 +57,12 @@ wifi:
 captive_portal:
 ```
 
+**Structure of your esphome folder:**
+
+![image](https://github.com/jrymk/mojular/assets/39593345/708b6731-5412-4641-8a83-ac47ed4f0989)
+
+Clone mojular into `esphome/mojular`
+
 
 ## Supported devices
 
