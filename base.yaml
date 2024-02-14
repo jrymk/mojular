@@ -1,0 +1,34 @@
+esphome:
+  name: "${name}"
+  friendly_name: "${friendly_name}"
+
+logger:
+  # disable logging because it is slow!
+  baud_rate: 0
+
+captive_portal:
+
+wifi:
+  # Fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${name}"
+
+button:
+  - platform: restart
+    name: "Restart"
+    entity_category: diagnostic
+
+  - platform: safe_mode
+    name: "Restart (Safe Mode)"
+    entity_category: diagnostic
+
+binary_sensor:
+  - platform: status
+    name: "Status"
+
+sensor:
+  - platform: wifi_signal
+    name: "Wifi Signal"
+
+  - platform: internal_temperature
+    name: "CPU Temperature"

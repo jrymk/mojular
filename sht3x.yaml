@@ -1,0 +1,46 @@
+# https://esphome.io/components/sensor/sht3xd.html
+
+number:
+  - platform: template
+    name: "${name} Temperature Offset"
+    id: "${id}_temperature_offset"
+    min_value: -50
+    max_value: 50
+    step: 0.1
+    mode: box
+    update_interval: never
+    optimistic: true
+    restore_value: true
+    initial_value: 0
+    icon: "mdi:water-percent"
+    entity_category: config
+
+  - platform: template
+    name: "${name} Humidity Offset"
+    id: "${id}_humidity_offset"
+    unit_of_measurement: "%"
+    min_value: -50
+    max_value: 50
+    step: 0.1
+    mode: box
+    update_interval: never
+    optimistic: true
+    restore_value: true
+    initial_value: 0
+    icon: "mdi:water-percent"
+    entity_category: config
+    
+sensor: 
+  - platform: sht3xd
+    id: "${id}"
+    i2c_id: "${i2c_id}"
+    address: "${address}"
+    update_interval: "${update_interval}"
+    temperature:
+      name: "${name} Temperature"
+      filters:
+        - lambda: "return x + id(${id}_temperature_offset).state;"
+    humidity:
+      name: "${name} Humidity"
+      filters:
+        - lambda: "return x + id(${id}_humidity_offset).state;"

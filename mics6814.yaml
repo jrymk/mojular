@@ -1,0 +1,48 @@
+sensor:
+  - platform: adc
+    pin: "${co_pin}"
+    name: "${name} CO Voltage"
+    attenuation: 11db
+    id: "${id}_co_voltage"
+    update_interval: "${update_interval}"
+
+  # - platform: adc
+  #   pin: 7
+  #   name: "CO Resistance"
+  #   attenuation: 11db
+  #   id: co_r
+  #   update_interval: 5s
+  #   filters:
+  #     - lambda: return (x * 100000 / (3.3 - x));
+
+  - platform: adc
+    pin: "${nh3_pin}"
+    name: "${name} NH3 Voltage"
+    attenuation: 11db
+    id: "${id}_nh3_voltage"
+    update_interval: "${update_interval}"
+
+  # - platform: adc
+  #   pin: 8
+  #   id: nh3_r
+  #   name: "NH3 Resistance"
+  #   attenuation: 11db
+  #   update_interval: 5s
+  #   filters:
+  #     - lambda: return (x * 10000 / (3.3 - x));
+
+  - platform: adc
+    pin: "${no2_pin}"
+    name: "${name} NO2 Voltage"
+    attenuation: 11db
+    id: "${id}_no2_voltage"
+    update_interval: "${update_interval}"
+  
+  # - platform: adc
+  #   pin: 9
+  #   id: no2_r
+  #   name: "NO2 Resistance"
+  #   attenuation: 11db
+  #   update_interval: 5s
+  #   filters:
+  #     - lambda: return (x * 1000 / (3.3 - x));

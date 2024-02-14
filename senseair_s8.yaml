@@ -1,0 +1,10 @@
+# https://esphome.io/components/sensor/senseair.html
+
+sensor: 
+  - platform: senseair
+    id: "${id}"
+    uart_id: "${uart_id}"
+    update_interval: "${update_interval}"
+    co2:
+      name: "${name} CO2 Concentration"
+      id: "${id}_co2_concentration"
