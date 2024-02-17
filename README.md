@@ -118,6 +118,7 @@ Clone mojular into `esphome/mojular`
       id: "mmwave"
       name: "mmWave"
       uart_id: "mmwave_uart"
+      engineering_mode: "on"
 ```
 
 #### MICS-6814
